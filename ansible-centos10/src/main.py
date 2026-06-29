@@ -668,7 +668,7 @@ def get_target_roles(server_id: str, show_system: bool = Query(False), current_u
 @app.post("/api/manage-privileges/")
 def manage_db_privileges(
     req: dict, 
-    current_user: str = Depends(RoleChecker(["admin", "Security_Manager"]))
+    current_user: str = Depends(RoleChecker(["admin"]))
 ):
     target_server = req.get("target_server", "").strip()
     target_db_param = req.get("target_db", "").strip()
