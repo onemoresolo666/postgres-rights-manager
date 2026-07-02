@@ -152,7 +152,7 @@ def send_credentials_email(target_email: str, db_user: str, db_pass: str, host: 
         return False
 
     # Сборка глянцевого HTML-письма (Берём базовый URL из .env, чтобы не хардкодить IP-адрес)
-    panel_url = os.environ.get("PANEL_BASE_URL", "{{dns_usertoken_name}}").rstrip('/')
+    panel_url = os.environ.get("PANEL_BASE_URL", "https://{{dns_usertoken_name}}").rstrip('/')
     one_time_url = f"{panel_url}/api/view-password/{secure_token}"
     
     msg = MIMEMultipart('alternative')
