@@ -467,7 +467,7 @@ def test_server_connection(
         "user": req.db_user,
         "password": target_password,
         "dbname": req.dbname,
-        "connect_timeout": 5  # ИБ-ФИКС: Передаем строго INTEGER, гарантируя жесткий сброс сессии через 5 секунд!
+        "connect_timeout": 2  # ИБ-ФИКС: Передаем строго INTEGER, гарантируя жесткий сброс сессии через 5 секунд!
     }
 
     # Локализуем сетевую разведку глубоко внутри блока try-except
